@@ -16,9 +16,7 @@ function porte_plume_intertitres_porte_plume_barre_pre_charger($barres){
     $barre = &$barres['edition'];
 	
 	$barre->set('header1', array(
-		// groupe formatage paragraphe
 		"dropMenu"    => array(
-			// bouton <cadre>
 			array(
 				"id"          => 'intertitre',
 				"name"        => _T('barre_intertitre'),
@@ -64,6 +62,58 @@ function porte_plume_intertitres_porte_plume_barre_pre_charger($barres){
 					"separator" => "---------------",
 					"display"   => true,
 		));
+	$barre->ajouterApres('sepgrp1', array(
+			"id" => "ref",
+			"name"        => _T('barre_intertitre'),
+			"className"   => 'outil_ref', 
+			"dropMenu"    => array(
+			array(
+				"id"          => 'ref1',
+				"name"        => _T('barre_intertitre'),
+				"className"   => 'outil_ref1', 
+				"openWith" => "\n{{{# ",
+				"closeWith" => "}}}\n",
+				"display"     => true,
+				"selectionType" => "line",
+			),
+			array(
+				"id"          => 'ref2',
+				"name"        => _T('porte_plume_intertitres:barre_intertitre2'),
+				"className"   => 'outil_ref2', 
+				"openWith" => "\n{{{## ",
+				"closeWith" => "}}}\n",
+				"display"     => true,
+				"selectionType" => "line",
+			),
+			array(
+				"id"          => 'ref2',
+				"name"        => _T('porte_plume_intertitres:barre_intertitre3'),
+				"className"   => 'outil_ref3', 
+				"openWith" => "\n{{{### ",
+				"closeWith" => "}}}\n",
+				"display"     => true,
+				"selectionType" => "line",
+			),
+			array(
+				"id"          => 'ref3',
+				"name"        => _T('porte_plume_intertitres:barre_intertitre4'),
+				"className"   => 'outil_ref4', 
+				"openWith" => "\n{{{#### ",
+				"closeWith" => "}}}\n",
+				"display"     => true,
+				"selectionType" => "line",
+			),
+			
+		)
+	
+	));
+	
+	$barre->ajouterApres('ref', array(
+					"id" => "sepgrp2",
+					"separator" => "---------------",
+					"display"   => true,
+		));
+	
 	
 
 	return $barres;
@@ -75,7 +125,12 @@ function porte_plume_intertitres_porte_plume_lien_classe_vers_icone($flux){
 		'outil_intertitre1' => array('intertitre_2.png','0'), //'intertitre.png'
 		'outil_intertitre2' => array('intertitre_3.png','0'),
 		'outil_intertitre3' => array('intertitre_4.png','0'),
-		'outil_intertitre4' => array('intertitre_5.png','0')
+		'outil_intertitre4' => array('intertitre_5.png','0'),
+		'outil_ref' => array('ref.png','0'),
+		'outil_ref1' => array('ref1.png','0'),
+		'outil_ref2' => array('ref2.png','0'),
+		'outil_ref3' => array('ref3.png','0'),
+		'outil_ref4' => array('ref4.png','0')
 	));
 }
 // http://contrib.spip.net/Generation-automatique-de
