@@ -1,0 +1,23 @@
+<paquet
+	prefix="porte_plume_intertitres"
+	categorie="edition"
+	version="1.0.0"
+	etat="dev"
+	compatibilite="[3.0.16;3.1.*]"
+	logo=""
+	documentation=""
+>
+	<nom>Intertitres hierarchiques</nom>
+
+	<auteur>Mist. GraphX</auteur>
+
+	<licence>GNU/GPL</licence>
+	
+	<pipeline nom="pre_propre" inclure="porte_plume_intertitres_pipelines.php" />
+	
+	<pipeline nom="porte_plume_barre_pre_charger" inclure="porte_plume_intertitres_pipelines.php" />
+    <pipeline nom="porte_plume_lien_classe_vers_icone" inclure="porte_plume_intertitres_pipelines.php" />
+    
+	<necessite nom="tw" compatibilite="[0.3.1;[" />
+
+</paquet>

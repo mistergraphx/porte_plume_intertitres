@@ -1,0 +1,59 @@
+--- # Syntaxe des raccourcis SPIP, version 0.0.1
+    #
+    # Si on nomme une regle, elle devient surchargeable
+intertitre4:
+  # raccourcis en {{{..}}}
+  # intertitres
+  match: ['{{{***', '}}}']
+  replace: ["\n\n\n<h4>", "</h4>\n\n\n"]
+  if_str: '{{{***'
+  type: str
+  priority: -40
+  
+intertitre3:
+  # raccourcis en {{{..}}}
+  # intertitres
+  match: ['{{{**', '}}}']
+  replace: ["\n\n\n<h3>", "</h3>\n\n\n"]
+  if_str: '{{{**'
+  type: str
+  priority: -40
+
+intertitre2:
+  # raccourcis en {{{..}}}
+  # intertitres
+  match: ['{{{*', '}}}']
+  replace: ["\n\n\n<h2 class='coucou'>", "</h2>\n\n\n"]
+  if_str: '{{{*'
+  type: str
+  priority: -40
+
+reference4:
+  match: ['{{{###', '}}}']
+  replace: ["\n\n\n<h4>", "</h4>\n\n\n"]
+  if_str: '{{{###'
+  type: str
+  priority: -40
+
+reference3:
+  match: ['{{{##', '}}}']
+  replace: ["\n\n\n<h3>", "</h3>\n\n\n"]
+  if_str: '{{{##'
+  type: str
+  priority: -40
+
+reference2:
+  match: ['{{{#', '}}}']
+  replace: ["\n\n\n<h2>", "</h2>\n\n\n"]
+  if_str: '{{{#'
+  type: str
+  priority: -40
+
+intertitres:
+  # raccourcis en {{{..}}}
+  # intertitres
+  match: ['{{{', '}}}']
+  replace: ["\n\n\n<h3 class=\"spip\">", "</h3>\n\n\n"]
+  if_str: '{{{'
+  type: str
+  priority: -10
