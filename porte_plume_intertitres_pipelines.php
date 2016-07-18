@@ -115,8 +115,6 @@ function porte_plume_intertitres_pre_propre($texte) {
   
   //initialisation du compteur
   $cnt[0] = 0;
-  $lastlevel = 1;
-  $cite[''] = '';
 
   //pour chaque titre trouvé
   for ($j=0; $j < $count; $j++) {
@@ -135,10 +133,8 @@ function porte_plume_intertitres_pre_propre($texte) {
 		$numeros = ++$cnt[0];
 		
 		$titre = $numeros.' - '.$titre;
-
-		
 	} else {
-        //on est à un niveau plus profond
+        // on est à un niveau plus profond
         // on construit le numéros
 		$numeros = $cnt[0].'.';
 		for ($i=1; $i < strlen($level)-1; $i++) {
@@ -162,15 +158,8 @@ function porte_plume_intertitres_pre_propre($texte) {
 		$texte = substr_replace($haystack, $replace, $pos, strlen($needle));
 	}
 	
-	//$texte = str_replace($matches[0][$j], $debut_markup.$titre.$fin_markup, $texte);
   }
-  
-  //on remplace les raccourcis par les numéros des sections.
-//  foreach ($cite as $ref => $num) {
-//	$texte = str_replace("<$ref>","<a href=\"#$num\">$num</a>",$texte);	
-//  }
 
-  
   return $texte;
 }
 
