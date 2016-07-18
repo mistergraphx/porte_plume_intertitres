@@ -23,7 +23,7 @@ intertitre2:
   # raccourcis en {{{..}}}
   # intertitres
   match: ['{{{*', '}}}']
-  replace: ["\n\n\n<h2 class='coucou'>", "</h2>\n\n\n"]
+  replace: ["\n\n\n<h2>", "</h2>\n\n\n"]
   if_str: '{{{*'
   type: str
   priority: -40
