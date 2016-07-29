@@ -10,5 +10,3 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'porte_plume_intertitres_nom' => 'Intertitres hierarchiques',
 	'porte_plume_intertitres_slogan' => 'Intertitres hierarchiques',
 );
-
-?>

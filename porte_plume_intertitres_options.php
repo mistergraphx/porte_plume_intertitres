@@ -19,5 +19,3 @@ if ( !isset ( $GLOBALS['debut_intertitre'] ) ) {
     $GLOBALS['fin_intertitre'] = '</h3>';
 }
 
-
-?>

@@ -219,4 +219,3 @@ function porte_plume_intertitres_pre_propre($texte) {
   return $texte;
 }
 
-?>
