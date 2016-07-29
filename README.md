@@ -27,15 +27,20 @@ Ce plugin ajoute au porte plume de [spip](http://www.spip.net/) la gestion de ni
 | `{{{### Titre de type référence }}}` ||
 | `{{{#### Titre de type référence }}}` ||
 
-Si  les icones du porte plume n'apparaissent pas après l'activation du plugin, supprimez les dossiers /local/cache-css et js
+
+*Si  les icones du porte plume n'apparaissent pas après l'activation du plugin, supprimez les dossiers /local/cache-css et js*
 
 ## TODO
 
-- [] ajouter les titres référence dans la barre d'outil sur globale ou config ?
-- [] personaliser les .class
+- [ ] ajouter les titres référence dans la barre d'outil sur globale ou config ?
+- [ ] personaliser les .class
+
 
 ## CHANGELOGS
 
+-   1.0.2 :
+    - supression du fichier fonction inutile pour le moment et des markers de fin de php `?>`
+        
 -   1.0.1 :
     ajout d'une fonction de callback sur les wheels des intertitres, gérant
     l'incrémentation du niveau de titre d'après la $GLOBALS['debut_intertitre']
