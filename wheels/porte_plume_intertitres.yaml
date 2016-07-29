@@ -36,26 +36,40 @@ intertitre2:
   replace: intertitres
   if_str: '{{{*'
   priority: -40
+  
+reference5:
+  match: "/({{{)(#####)(.*?)(}}})/s"
+  is_callback: Y
+  replace: intertitres
+  if_str: '{{{#####'
+  priority: -40
 
 reference4:
-  match: ['{{{###', '}}}']
-  replace: ["\n\n\n<h4>", "</h4>\n\n\n"]
-  if_str: '{{{###'
-  type: str
+  match: "/({{{)(####)(.*?)(}}})/s"
+  is_callback: Y
+  replace: intertitres
+  if_str: '{{{####'
   priority: -40
 
 reference3:
-  match: ['{{{##', '}}}']
-  replace: ["\n\n\n<h3>", "</h3>\n\n\n"]
-  if_str: '{{{##'
-  type: str
+  match: "/({{{)(###)(.*?)(}}})/s"
+  is_callback: Y
+  replace: intertitres
+  if_str: '{{{###'
   priority: -40
 
 reference2:
-  match: ['{{{#', '}}}']
-  replace: ["\n\n\n<h2>", "</h2>\n\n\n"]
+  match: "/({{{)(##)(.*?)(}}})/s"
+  is_callback: Y
+  replace: intertitres
+  if_str: '{{{##'
+  priority: -40
+
+reference1:
+  match: "/({{{)(#)(.*?)(}}})/s"
+  is_callback: Y
+  replace: intertitres
   if_str: '{{{#'
-  type: str
   priority: -40
 
 intertitres:

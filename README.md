@@ -32,11 +32,15 @@ Ce plugin ajoute au porte plume de [spip](http://www.spip.net/) la gestion de ni
 
 ## TODO
 
-- [ ] ajouter les titres référence dans la barre d'outil sur globale ou config ?
+- [ ] ajouter de ne pas afficher les titres référence dans la barre d'outil sur globale ou config ?
 - [ ] personaliser les .class
+- [ ] limiter le niveau et passer sur un div a h6
 
 
 ## CHANGELOGS
+
+-   1.0.3 :
+    - Report de la gestion du niveau sur les références
 
 -   1.0.2 :
     - supression du fichier fonction inutile pour le moment et des markers de fin de php `?>`
