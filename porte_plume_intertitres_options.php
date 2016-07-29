@@ -14,4 +14,10 @@ if (!defined('_ECRIRE_INC_VERSION')) return;
 // Ajout des raccourcis dans la liste des wheels
 $GLOBALS['spip_wheels']['raccourcis'][] = 'porte_plume_intertitres.yaml';
 
+if ( !isset ( $GLOBALS['debut_intertitre'] ) ) {
+    $GLOBALS['debut_intertitre'] = '<h3 class="spip">';
+    $GLOBALS['fin_intertitre'] = '</h3>';
+}
+
+
 ?>

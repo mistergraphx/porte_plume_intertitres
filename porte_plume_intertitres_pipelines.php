@@ -113,8 +113,6 @@ function porte_plume_intertitres_porte_plume_barre_pre_charger($barres){
 					"separator" => "---------------",
 					"display"   => true,
 		));
-	
-	
 
 	return $barres;
 }
@@ -133,6 +131,9 @@ function porte_plume_intertitres_porte_plume_lien_classe_vers_icone($flux){
 		'outil_ref4' => array('ref4.png','0')
 	));
 }
+// Numérotation/incrémentation des titres de type référence
+// avant le passage de textWheel.
+// On numérotte et on prépare pour le traitement par textWheel
 // http://contrib.spip.net/Generation-automatique-de
 function porte_plume_intertitres_pre_propre($texte) {
   
