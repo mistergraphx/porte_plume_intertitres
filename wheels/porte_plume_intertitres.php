@@ -28,7 +28,12 @@ function intertitres($t){
     preg_match('/[h](\d)/s',$GLOBALS['debut_intertitre'], $matches) ;
     $base_level = $matches[1];
     $level = (strlen($t[2]) - 1) + $base_level;
-    $html = "<h$level>".$t[3]."</h$level>";
-    return $html;
+	// ne pas depasser h6
+	if($level < 7)
+		$html = "<h$level>".$t[3]."</h$level>";
+    else
+		$html = "<div class=\"$level\">".$t[3]."</div>";
+		
+	return $html;
 }
 

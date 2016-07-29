@@ -167,7 +167,7 @@ function porte_plume_intertitres_pre_propre($texte) {
 		[3]=>}}}
 */
   // retourne le nombre de matches
-  $count = preg_match_all("/({{{)(\#{1,4})(.*)(}}})/i", $texte, $matches);
+  $count = preg_match_all("/({{{)(\#{1,5})(.*)(}}})/i", $texte, $matches);
   
   //initialisation du compteur
   $cnt[0] = 0;
