@@ -11,7 +11,24 @@ $GLOBALS['fin_intertitre'] = "</h3>\n";
 
 ```
 
-Ce plugin ajoute au porte plume de [spip](http://www.spip.net/) la gestion de niveaux de titres supplémentaires.
+Ce plugin ajoute au porte plume de [spip](http://www.spip.net/)
+la gestion de niveaux de titres supplémentaires, en prenant en compte le niveau de départ configuré dans spip ou `mes_options.php`.
+
+Le plugin reprend les syntaxes proposées par typo-enluminée, et intertitres_tdm
+Soit les syntaxes `{{{***` pour les titres simples ou `{{{###` pour les titres de type référence (ex:1.1, 1.1.2).
+
+**Différences avec les plugins typo enluminé ou intertitres_hierarchise_et_tdm :**
+
+*	ce plugin utilise [textwheel](http://contrib.spip.net/Presentation-de-TextWheel),
+ceci permettant entre autre :
+
+	- de pouvoir surcharger les wheels déclarées pour un besoin spécifique,
+	- tester et maintenir plus facilement les expressions/ étudiées/raccourcis traités.
+	- utiliser les fonctionnalitées de spip3
+
+*	il ne gère que les titres : ce plugin n'apporte **que** cette fonctionnalité.
+*	une syntaxe additionnelle permet d'ajouter des classes css supplémentaires et une id spécifique au titre.
+
 
 ## Raccourcis
 
@@ -26,26 +43,36 @@ Ce plugin ajoute au porte plume de [spip](http://www.spip.net/) la gestion de ni
 | `{{{## Titre de type référence }}}` ||
 | `{{{### Titre de type référence }}}` ||
 | `{{{#### Titre de type référence }}}` ||
+| **Attributs**| par défaut les classes hx et rx sont ajoutées automatiquement|
+| `{{{ Titre }}}{.test-class1 .test--extender #id_titre1}` | Ajouter des attributs (css, id) suplémentaires aux titres |
 
+
+
+## A savoir
 
 *Si  les icones du porte plume n'apparaissent pas après l'activation du plugin, supprimez les dossiers /local/cache-css et js*
 
+*Le plugin étant en developpement , si vous avez installé une version précédente, il peut être nécessaire
+de supprimer le dossier /tmp/cache/wheels, pour que les traitements typo soient pris en compte.*
+
 ## TODO
 
-- [ ] ajouter de ne pas afficher les titres référence dans la barre d'outil sur globale ou config ?
-- [ ] personaliser les .class
-
-
+- [ ] ajouter la possibilitée de ne pas afficher les titres référence dans la barre d'outil sur globale ou config ?
 
 ## CHANGELOGS
+
+-	1.0.5
+	- [x] personnaliser les .class
+	Mise en place de la gestion d'attributs additionnels aux titres via le raccourci inspiré de la syntaxe markdown `{.class .block--modifier #ID}`.
+
 -   1.0.4 :
-    - [X] limiter le niveau et passer sur un div a h6
+    - [x] limiter le niveau et passer sur un div a h6
     
 -   1.0.3 :
     - Report de la gestion du niveau sur les références
 
 -   1.0.2 :
-    - supression du fichier fonction inutile pour le moment et des markers de fin de php `?>`
+    - suppression du fichier fonction inutile pour le moment et des markers de fin de php `?>`
         
 -   1.0.1 :
     ajout d'une fonction de callback sur les wheels des intertitres, gérant

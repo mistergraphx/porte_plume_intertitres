@@ -1,72 +1,73 @@
 --- # Syntaxe des raccourcis SPIP, version 0.0.1
     #
     # Si on nomme une regle, elle devient surchargeable
-intertitre5:
+    # http://lumadis.be/regex/test_regex.php?id=2935
+intertitre4:
   # raccourcis en {{{..}}}
   # intertitres
-  match: "/({{{)(\*\*\*\*)(.*?)(}}})/s"
+  match: "/({{{)(\*\*\*\*)(.*?)(}}})(?:{(.*?)})?/s"
   is_callback: Y
   replace: intertitres
   if_str: '{{{****'
   priority: -40
   
-intertitre4:
+intertitre3:
   # raccourcis en {{{..}}}
   # intertitres
-  match: "/({{{)(\*\*\*)(.*?)(}}})/s"
+  match: "/({{{)(\*\*\*)(.*?)(}}})(?:{(.*?)})?/s"
   is_callback: Y
   replace: intertitres
   if_str: '{{{***'
   priority: -40
   
-intertitre3:
+intertitre2:
   # raccourcis en {{{..}}}
   # intertitres
-  match: "/({{{)(\*\*)(.*?)(}}})/s"
+  match: "/({{{)(\*\*)(.*?)(}}})(?:{(.*?)})?/s"
   is_callback: Y
   replace: intertitres
   if_str: '{{{**'
   priority: -40
 
-intertitre2:
+intertitre1:
   # raccourcis en {{{..}}}
   # intertitres
-  match: "/({{{)(\*)(.*?)(}}})/s"
+  match: "/({{{)(\*)(.*?)(}}})(?:{(.*?)})?/s"
   is_callback: Y
   replace: intertitres
   if_str: '{{{*'
   priority: -40
   
 reference5:
-  match: "/({{{)(#####)(.*?)(}}})/s"
+  match: "/({{{)(#####)(.*?)(}}})(?:{(.*?)})?/s"
   is_callback: Y
   replace: intertitres
   if_str: '{{{#####'
   priority: -40
 
 reference4:
-  match: "/({{{)(####)(.*?)(}}})/s"
+  match: "/({{{)(####)(.*?)(}}})(?:{(.*?)})?/s"
   is_callback: Y
   replace: intertitres
   if_str: '{{{####'
   priority: -40
 
 reference3:
-  match: "/({{{)(###)(.*?)(}}})/s"
+  match: "/({{{)(###)(.*?)(}}})(?:{(.*?)})?/s"
   is_callback: Y
   replace: intertitres
   if_str: '{{{###'
   priority: -40
 
 reference2:
-  match: "/({{{)(##)(.*?)(}}})/s"
+  match: "/({{{)(##)(.*?)(}}})(?:{(.*?)})?/s"
   is_callback: Y
   replace: intertitres
   if_str: '{{{##'
   priority: -40
 
 reference1:
-  match: "/({{{)(#)(.*?)(}}})/s"
+  match: "/({{{)(#)(.*?)(}}})(?:{(.*?)})?/s"
   is_callback: Y
   replace: intertitres
   if_str: '{{{#'
@@ -75,8 +76,8 @@ reference1:
 intertitres:
   # raccourcis en {{{..}}}
   # intertitres
-  match: ['{{{', '}}}']
-  replace: ["\n\n\n<h3 class=\"spip\">", "</h3>\n\n\n"]
+  match: "/({{{)(.*?)(}}})(?:{(.*?)})?/s"
+  is_callback: Y
+  replace: intertitres
   if_str: '{{{'
-  type: str
   priority: -10

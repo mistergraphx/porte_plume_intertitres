@@ -21,19 +21,85 @@ if (!defined('_ECRIRE_INC_VERSION')) {
 // Le contenu du tableau est le suivant :
 // 0 - la chaine complète
 // 1 - le groupe ouvrant
-// 2 - le level
+// 2 - le type|level
 // 3 - le contenu
 // 4 - le groupe fermant
+// 5 - attributs class|id
 function intertitres($t){
+	// Récupérer le niveau de base d'après la global
     preg_match('/[h](\d)/s',$GLOBALS['debut_intertitre'], $matches) ;
     $base_level = $matches[1];
+	
+	// Ajouster le level de l'item
     $level = (strlen($t[2]) - 1) + $base_level;
+	
+	// quel type 
+	$type = get_type($t[2]);
+	
+	// extenders
+	$attributs = classer_attributs($t[5]);
+
+	$css = $type.$level;
+	if(isset($attributs['css']))
+		$css .= $attributs['css'];
+	
+	(isset($attributs['id'])) ?	$id = 'id="'.$attributs['id'].'"' : $id='';
+	
 	// ne pas depasser h6
 	if($level < 7)
-		$html = "<h$level>".$t[3]."</h$level>";
+		$html = "<h$level $id class=\"$css\">".$t[3]."</h$level>";
     else
-		$html = "<div class=\"$level\">".$t[3]."</div>";
+		$html = "<div $id class=\"$css\">".$t[3]."</div>";
 		
 	return $html;
 }
 
+function get_type($str){
+	if(preg_match('/#/',$str))
+		$type = 'r';
+	elseif(preg_match('/\*/',$str))
+		$type = 'h';
+	return $type;
+}
+
+function classer_attributs($attributs){
+
+	$attributs = preg_split('/[\s]+/', $attributs);
+
+	$sorted = [];
+	
+	foreach($attributs as $attribut){
+		// css
+		if(is_css($attribut)){
+			$class = is_css($attribut);
+			$sorted['css'] .= ' '.$class[1];
+		}
+		// id == 1
+		elseif(is_id($attribut))
+			$id = is_id($attribut);
+			$sorted['id'] = $id[1];
+		// properties
+		//else
+		//	$sorted['proprietes'] .=
+		
+	}
+
+	return $sorted;
+}
+
+// http://lumadis.be/regex/test_regex.php?id=2936
+function is_css($str){
+	$regex = '/\.([_a-zA-Z0-9-]+)/s';
+	if(preg_match($regex,$str,$class_name))
+		return $class_name;
+	else
+		return false;
+}
+
+function is_id($str){
+	$regex = '/#([_a-zA-Z0-9-]+)/s';
+	if(preg_match($regex,$str,$id))
+		return $id;
+	else
+		return false;
+}
