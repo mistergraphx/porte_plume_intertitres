@@ -31,7 +31,7 @@ ceci permettant entre autre :
 
 **Plugins complémentaires testés**
 
-*   Sommaire automatiques : gestion de table des matières.
+*   [Sommaire automatiques](http://contrib.spip.net/Sommaire-automatique).
 
 ## Raccourcis
 
@@ -47,7 +47,9 @@ ceci permettant entre autre :
 | `{{{### Titre de type référence }}}` ||
 | `{{{#### Titre de type référence }}}` ||
 | **Attributs**| par défaut les classes hx et rx sont ajoutées automatiquement|
-| `{{{ Titre }}}{.test-class1 .test--extender #id_titre1}` | Ajouter des attributs (css, id) suplémentaires aux titres |
+| `{{{ Titre }}}{.test-class1 .test--extender}` | Ajouter des attributs css suplémentaires aux titres |
+| `{{{ Titre }}}{#id_du_titre}` | Inssérer un identifiant unique |
+| `{{{ Titre }}}{attribut="valeur attribut" data-appear="left" itemprop="name"}` | Inssérer des propriétées/attributs libres |
 
 
 
@@ -64,6 +66,10 @@ de supprimer le dossier /tmp/cache/wheels, pour que les traitements typo soient 
 - [ ] ajouter la possibilitée de ne pas afficher les titres référence dans la barre d'outil sur globale ou config ?
 
 ## CHANGELOGS
+
+-   1.0.6
+    -   prise en charge dans les attributs de propriétées libres `propriete="valeur" `
+        ex `{.class .block--modifier #ID data-appear="left" itemprop="name"}
 
 -	1.0.5
 	- [x] personnaliser les .class

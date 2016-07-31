@@ -45,11 +45,14 @@ function intertitres($t){
 	
 	(isset($attributs['id'])) ?	$id = 'id="'.$attributs['id'].'"' : $id='';
 	
+	if(isset($attributs['proprietes']))
+		$properties .= ' '.$attributs['proprietes'];
+		
 	// ne pas depasser h6
 	if($level < 7)
-		$html = "<h$level $id class=\"$css\">".$t[3]."</h$level>";
+		$html = "<h$level $id class=\"$css\"$properties>".$t[3]."</h$level>";
     else
-		$html = "<div $id class=\"$css\">".$t[3]."</div>";
+		$html = "<div $id class=\"$css\"$properties>".$t[3]."</div>";
 		
 	return $html;
 }
@@ -75,12 +78,15 @@ function classer_attributs($attributs){
 			$sorted['css'] .= ' '.$class[1];
 		}
 		// id == 1
-		elseif(is_id($attribut))
+		elseif(is_id($attribut)) {
 			$id = is_id($attribut);
 			$sorted['id'] = $id[1];
-		// properties
-		//else
-		//	$sorted['proprietes'] .=
+		}
+		// properties 
+		elseif(is_propertie($attribut)){
+			$propertie = is_propertie($attribut);
+			$sorted['proprietes'] .= $propertie[1];
+		}
 		
 	}
 
@@ -100,6 +106,14 @@ function is_id($str){
 	$regex = '/#([_a-zA-Z0-9-]+)/s';
 	if(preg_match($regex,$str,$id))
 		return $id;
+	else
+		return false;
+}
+http://lumadis.be/regex/test_regex.php?id=2937
+function is_propertie($str){
+	$regex = '/([_a-z-]+=[\"|\'].*?[\"|\'])/s';
+	if(preg_match($regex,$str,$propertie))
+		return $propertie;
 	else
 		return false;
 }
