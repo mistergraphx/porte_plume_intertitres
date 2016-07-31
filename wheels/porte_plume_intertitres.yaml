@@ -76,8 +76,8 @@ reference1:
 intertitres:
   # raccourcis en {{{..}}}
   # intertitres
-  match: "/({{{)(.*?)(}}})(?:{(.*?)})?/s"
+  match: "/({{{(?!\*|#))(.*?)(}}})(?:{(.*?)})?/s"
   is_callback: Y
   replace: intertitres
   if_str: '{{{'
-  priority: -10
+  priority: -30

@@ -31,7 +31,14 @@ function intertitres($t){
     $base_level = $matches[1];
 	
 	// Ajouster le level de l'item
-    $level = (strlen($t[2]) - 1) + $base_level;
+	// les titres spip n'ont pas #|*
+	if(strstr($t[2],'#') || strstr($t[2],'*')){
+		$level = (strlen($t[2]) - 1) + $base_level;
+		$titre = $t[3];
+	}else{
+		$level = $base_level;
+		$titre = $t[2];
+	}
 	
 	// quel type 
 	$type = get_type($t[2]);
@@ -50,9 +57,9 @@ function intertitres($t){
 		
 	// ne pas depasser h6
 	if($level < 7)
-		$html = "<h$level $id class=\"$css\"$properties>".$t[3]."</h$level>";
+		$html = "<h$level $id class=\"$css\"$properties>".$titre."</h$level>";
     else
-		$html = "<div $id class=\"$css\"$properties>".$t[3]."</div>";
+		$html = "<div $id class=\"$css\"$properties>".$titre."</div>";
 		
 	return $html;
 }
@@ -60,8 +67,9 @@ function intertitres($t){
 function get_type($str){
 	if(preg_match('/#/',$str))
 		$type = 'r';
-	elseif(preg_match('/\*/',$str))
+	else
 		$type = 'h';
+		
 	return $type;
 }
 

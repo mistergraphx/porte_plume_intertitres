@@ -67,6 +67,9 @@ de supprimer le dossier /tmp/cache/wheels, pour que les traitements typo soient 
 
 ## CHANGELOGS
 
+-   1.0.7
+    correctif sur les intertitres standards qui n'étaient plus gérés correctement
+
 -   1.0.6
     -   prise en charge dans les attributs de propriétées libres `propriete="valeur" `
         ex `{.class .block--modifier #ID data-appear="left" itemprop="name"}
