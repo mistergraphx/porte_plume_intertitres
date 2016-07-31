@@ -29,6 +29,9 @@ ceci permettant entre autre :
 *	il ne gère que les titres : ce plugin n'apporte **que** cette fonctionnalité.
 *	une syntaxe additionnelle permet d'ajouter des classes css supplémentaires et une id spécifique au titre.
 
+**Plugins complémentaires testés**
+
+*   Sommaire automatiques : gestion de table des matières.
 
 ## Raccourcis
 
@@ -50,7 +53,8 @@ ceci permettant entre autre :
 
 ## A savoir
 
-*Si  les icones du porte plume n'apparaissent pas après l'activation du plugin, supprimez les dossiers /local/cache-css et js*
+*Si  les icones du porte plume n'apparaissent pas après l'activation du plugin,
+supprimez les dossiers /local/cache-css et js.*
 
 *Le plugin étant en developpement , si vous avez installé une version précédente, il peut être nécessaire
 de supprimer le dossier /tmp/cache/wheels, pour que les traitements typo soient pris en compte.*
