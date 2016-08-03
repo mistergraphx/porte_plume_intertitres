@@ -1,7 +1,7 @@
 <paquet
 	prefix="porte_plume_intertitres"
 	categorie="edition"
-	version="1.0.7"
+	version="1.0.8"
 	etat="dev"
 	compatibilite="[3.0.16;3.1.*]"
 	logo="prive/themes/spip/images/porte_plume_intertitres-32.png"

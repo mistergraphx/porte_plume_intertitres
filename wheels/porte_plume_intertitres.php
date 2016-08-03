@@ -15,7 +15,7 @@ if (!defined('_ECRIRE_INC_VERSION')) {
 }
 
 // @see http://zone.spip.org/trac/spip-zone/browser/_plugins_/todo/trunk/wheels/todo.php
-// @see http://lumadis.be/regex/test_regex.php?id=2933
+// @see http://lumadis.be/regex/test_regex.php?id=2938
 // Extraction de lignes du texte
 // La wheel renvoie un tableau à cette callback qui est le résultat d'un preg_match_all.
 // Le contenu du tableau est le suivant :
@@ -30,23 +30,27 @@ function intertitres($t){
     preg_match('/[h](\d)/s',$GLOBALS['debut_intertitre'], $matches) ;
     $base_level = $matches[1];
 	
+	// quel type ? h ou r
+	// pour les class auto
+	$type = get_type($t[2]);
+	
 	// Ajouster le level de l'item
+	// !! dans le cas du titre spip la regex ne retourne pas le mm nombre de résultats dans le array
 	// les titres spip n'ont pas #|*
-	if(strstr($t[2],'#') || strstr($t[2],'*')){
+	if(strpos($t[2],'#') !== false || strpos($t[2],'*') !== false){
 		$level = (strlen($t[2]) - 1) + $base_level;
 		$titre = $t[3];
+		// extenders
+		$attributs = classer_attributs($t[5]);
 	}else{
 		$level = $base_level;
 		$titre = $t[2];
+		// extenders
+		$attributs = classer_attributs($t[4]); // dans le cas des inter spip les extenders son en position 4
 	}
 	
-	// quel type 
-	$type = get_type($t[2]);
-	
-	// extenders
-	$attributs = classer_attributs($t[5]);
-
 	$css = $type.$level;
+	
 	if(isset($attributs['css']))
 		$css .= $attributs['css'];
 	
@@ -64,8 +68,10 @@ function intertitres($t){
 	return $html;
 }
 
+
+
 function get_type($str){
-	if(preg_match('/#/',$str))
+	if(strpos('#',$str) !== false)
 		$type = 'r';
 	else
 		$type = 'h';
@@ -94,8 +100,7 @@ function classer_attributs($attributs){
 		elseif(is_propertie($attribut)){
 			$propertie = is_propertie($attribut);
 			$sorted['proprietes'] .= $propertie[1];
-		}
-		
+		}		
 	}
 
 	return $sorted;
@@ -117,7 +122,8 @@ function is_id($str){
 	else
 		return false;
 }
-http://lumadis.be/regex/test_regex.php?id=2937
+
+// http://lumadis.be/regex/test_regex.php?id=2937
 function is_propertie($str){
 	$regex = '/([_a-z-]+=[\"|\'].*?[\"|\'])/s';
 	if(preg_match($regex,$str,$propertie))

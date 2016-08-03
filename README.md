@@ -46,7 +46,7 @@ ceci permettant entre autre :
 | `{{{## Titre de type référence }}}` ||
 | `{{{### Titre de type référence }}}` ||
 | `{{{#### Titre de type référence }}}` ||
-| **Attributs**| par défaut les classes hx et rx sont ajoutées automatiquement|
+| **Attributs**| par défaut les classes hx et rx sont ajoutées automatiquement |
 | `{{{ Titre }}}{.test-class1 .test--extender}` | Ajouter des attributs css suplémentaires aux titres |
 | `{{{ Titre }}}{#id_du_titre}` | Inssérer un identifiant unique |
 | `{{{ Titre }}}{attribut="valeur attribut" data-appear="left" itemprop="name"}` | Inssérer des propriétées/attributs libres |
@@ -66,6 +66,10 @@ de supprimer le dossier /tmp/cache/wheels, pour que les traitements typo soient 
 - [ ] ajouter la possibilitée de ne pas afficher les titres référence dans la barre d'outil sur globale ou config ?
 
 ## CHANGELOGS
+
+-   1.0.8
+    strpos au lieu de strstr, moins couteux en ressource
+    strpos au lieu de preg_match pour la function get_type
 
 -   1.0.7
     correctif sur les intertitres standards qui n'étaient plus gérés correctement
