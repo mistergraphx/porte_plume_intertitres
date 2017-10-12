@@ -64,7 +64,10 @@ de supprimer le dossier /tmp/cache/wheels, pour que les traitements typo soient 
 ## TODO
 
 - [ ] ajouter la possibilitée de ne pas afficher les titres référence dans la barre d'outil sur globale ou config ?
-
+- [ ] ajout d'anchre avec url pour permettre d'inclure des liens facilement vers une partie du texte :  
+	https://assortment.io/posts/simple-automated-jumplinks-with-jquery  
+	ou anchor.js
+	
 ## CHANGELOGS
 
 -   1.0.8
