@@ -13,6 +13,8 @@ if (!defined('_ECRIRE_INC_VERSION')) return;
 	
 // http://www.spip-contrib.net/Porte-Plume-documentation-technique
 function porte_plume_intertitres_porte_plume_barre_pre_charger($barres){
+
+	
     $barre = &$barres['edition'];
 	
 	$barre->set('header1', array(
@@ -62,6 +64,10 @@ function porte_plume_intertitres_porte_plume_barre_pre_charger($barres){
 					"separator" => "---------------",
 					"display"   => true,
 		));
+	
+	include_spip('inc/config');
+	if (lire_config('porte_plume_intertitres/afficher_references', 0)) {
+		
 	$barre->ajouterApres('sepgrp1', array(
 			"id" => "ref",
 			"name"        => _T('barre_intertitre'),
@@ -113,6 +119,7 @@ function porte_plume_intertitres_porte_plume_barre_pre_charger($barres){
 					"separator" => "---------------",
 					"display"   => true,
 		));
+	}
 
 	return $barres;
 }

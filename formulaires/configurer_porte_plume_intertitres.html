@@ -1,0 +1,32 @@
+<div class="formulaire_spip formulaire_configurer formulaire_#FORM">
+
+	[<p class="reponse_formulaire reponse_formulaire_ok">(#ENV*{message_ok})</p>]
+	[<p class="reponse_formulaire reponse_formulaire_erreur">(#ENV*{message_erreur})</p>]
+
+	<form method="post" action="#ENV{action}">
+		<div>
+			#ACTION_FORMULAIRE{#ENV{action}}
+			
+			<fieldset>
+				<h3 class="legend"><:porte_plume_intertitres:cfg_references_fieldset:></h3>
+				<p><:porte_plume_intertitres:cfg_references_explication:></p>
+				<div class="editer-groupe">
+					<div class="editer">
+						<p class="explcation"></p>
+						<div class="choix">
+							<input type="checkbox" name="afficher_references" class="checkbox" value='on' id='afficher_references'[(#ENV{afficher_references}|oui)checked="checked" ]/>
+							<label for='afficher_references'>
+								<:porte_plume_intertitres:cfg_label_afficher_references:>
+							</label>
+						</div>
+					</div>
+				</div>
+			</fieldset>
+
+			<input type="hidden" name="_meta_casier" value="porte_plume_intertitres"/>
+			<p class="boutons">
+				<span class="image_loading">&nbsp;</span><input type="submit" class="submit" value="<:bouton_enregistrer:>"/>
+			</p>
+		</div>
+	</form>
+</div>
