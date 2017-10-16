@@ -12,7 +12,8 @@ $GLOBALS['fin_intertitre'] = "</h3>\n";
 ```
 
 Ce plugin ajoute au porte plume de [spip](http://www.spip.net/)
-la gestion de niveaux de titres supplémentaires, en prenant en compte le niveau de départ configuré dans spip ou `mes_options.php`.
+la gestion de niveaux de titres supplémentaires, en prenant en compte le niveau de départ configuré dans spip
+ou `mes_options.php`.
 
 Le plugin reprend les syntaxes proposées par typo-enluminée, et intertitres_tdm
 Soit les syntaxes `{{{***` pour les titres simples ou `{{{###` pour les titres de type référence (ex:1.1, 1.1.2).
@@ -61,12 +62,25 @@ supprimez les dossiers /local/cache-css et js.*
 *Le plugin étant en developpement , si vous avez installé une version précédente, il peut être nécessaire
 de supprimer le dossier /tmp/cache/wheels, pour que les traitements typo soient pris en compte.*
 
+## Participer
+
+Tout retour est apprécié : suggestions, tests, bugs, idées d'amélioration, pull request.
+
+
 ## TODO
 
 - [X] ajouter la possibilitée de ne pas afficher les titres référence dans la barre d'outil sur globale ou config ?
 - [ ] ajout d'anchre avec url pour permettre d'inclure des liens facilement vers une partie du texte :  
 	https://assortment.io/posts/simple-automated-jumplinks-with-jquery  
 	ou anchor.js
+- [ ] 	creer les icone et wheels pour prendre en compte les niveau suppérieurs a 5 et aller jusqu'au niveau 6
+		ou 7 suivant le niveau défini comme départ des intertitres spip (h3 par defaut).
+		Dans le cas de spip par defaut le dernier niveau généré est donc non-sémantique.
+- [ ] 	Afficher dans la page config le niveau de la globale
+		```php
+		    $GLOBALS['debut_intertitre'] = '<h3 class="spip">';
+			$GLOBALS['fin_intertitre'] = '</h3>';
+		```
 	
 ## CHANGELOGS
 

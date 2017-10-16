@@ -5,7 +5,7 @@
 	etat="dev"
 	compatibilite="[3.0.16;3.2.*]"
 	logo="prive/themes/spip/images/porte_plume_intertitres-32.png"
-	documentation=""
+	documentation="https://github.com/mistergraphx/porte_plume_intertitres"
 >
 	<nom>Intertitres hierarchiques</nom>
 
