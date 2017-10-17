@@ -4,6 +4,10 @@ Nativement spip ne propose qu'un seul niveau de titre/intertitre.
 Le niveau de départ `h3.spip` est configurable depuis `_options.php`,
 en utilisant les [variables de personalisations](http://www.spip.net/fr_article1825.html#debut_intertitre) :
 
+Ce plugin ajoute au porte plume de [spip](http://www.spip.net/)
+la gestion de niveaux de titres supplémentaires, en prenant en compte le niveau de départ configuré dans spip
+ou `mes_options.php`.
+
 ```php
 
 $GLOBALS['debut_intertitre'] = "\n<h3 class=\"spip\">\n";
@@ -11,12 +15,14 @@ $GLOBALS['fin_intertitre'] = "</h3>\n";
 
 ```
 
-Ce plugin ajoute au porte plume de [spip](http://www.spip.net/)
-la gestion de niveaux de titres supplémentaires, en prenant en compte le niveau de départ configuré dans spip
-ou `mes_options.php`.
+Le plugin reprend les syntaxes proposées par typo-enluminée, et intertitres_tdm, 
+les syntaxes `{{{***` pour les titres simples ou `{{{###` pour les titres de type référence (ex:1.1, 1.1.2).
 
-Le plugin reprend les syntaxes proposées par typo-enluminée, et intertitres_tdm
-Soit les syntaxes `{{{***` pour les titres simples ou `{{{###` pour les titres de type référence (ex:1.1, 1.1.2).
+Les icones affichées dans le porte plume (barre typographique),
+reflète le niveau sémantique au sens html pour sensibiliser le rédacteur à son plan de page.
+Le niveau se base sur la globale spip debut_intertitre.
+
+
 
 **Différences avec les plugins typo enluminé ou intertitres_hierarchise_et_tdm :**
 
@@ -43,6 +49,7 @@ ceci permettant entre autre :
 | `{{{** Titre standard }}}` ||
 | `{{{*** Titre standard }}}` ||
 | `{{{**** Titre standard }}}` ||
+| `{{{***** Titre standard }}}` ||
 | `{{{# Titre de type référence }}}` ||
 | `{{{## Titre de type référence }}}` ||
 | `{{{### Titre de type référence }}}` ||
