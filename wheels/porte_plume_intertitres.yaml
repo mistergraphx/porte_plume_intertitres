@@ -2,6 +2,15 @@
     #
     # Si on nomme une regle, elle devient surchargeable
     # http://lumadis.be/regex/test_regex.php?id=2935
+intertitre5:
+  # raccourcis en {{{..}}}
+  # intertitres
+  match: "/({{{)(\*\*\*\*\*)(.*?)(}}})(?:{(.*?)})?/s"
+  is_callback: Y
+  replace: intertitres
+  if_str: '{{{*****'
+  priority: -40
+  
 intertitre4:
   # raccourcis en {{{..}}}
   # intertitres

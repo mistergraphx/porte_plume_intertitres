@@ -69,20 +69,34 @@ Tout retour est apprécié : suggestions, tests, bugs, idées d'amélioration, p
 
 ## TODO
 
-- [X] ajouter la possibilitée de ne pas afficher les titres référence dans la barre d'outil sur globale ou config ?
-- [ ] ajout d'anchre avec url pour permettre d'inclure des liens facilement vers une partie du texte :  
-	https://assortment.io/posts/simple-automated-jumplinks-with-jquery  
-	ou anchor.js
-- [ ] 	creer les icone et wheels pour prendre en compte les niveau suppérieurs a 5 et aller jusqu'au niveau 6
-		ou 7 suivant le niveau défini comme départ des intertitres spip (h3 par defaut).
-		Dans le cas de spip par defaut le dernier niveau généré est donc non-sémantique.
+- [X] 	ajouter la possibilitée de ne pas afficher les titres référence dans la barre d'outil sur globale ou config ?
+- [ ] 	ajout d'anchre avec url pour permettre d'inclure des liens facilement vers une partie du texte :  
+		https://assortment.io/posts/simple-automated-jumplinks-with-jquery  
+		ou anchor.js
+
 - [ ] 	Afficher dans la page config le niveau de la globale
 		```php
 		    $GLOBALS['debut_intertitre'] = '<h3 class="spip">';
 			$GLOBALS['fin_intertitre'] = '</h3>';
 		```
+- [ ] 	Afficher l'icone correspondant au niveau de titre réelle en fonction de la globale debut_intertitre
 	
 ## CHANGELOGS
+
+
+- 	1.1.1
+
+mise en place des niveau suppérieurs a 5 et aller jusqu'au niveau 6
+ou 7 suivant le niveau défini comme départ des intertitres spip (h3 par defaut).
+aussi pour compatibilité avec typo_enluminee
+Dans le cas de spip par defaut le dernier niveau généré est donc non-sémantique `div.h7`.
+
+Pour mieux sensibiliser le rédacteur en fonction de son plan de page :
+on affiche les icones de la barre outil en fonction du niveau defini par la globale spip_debut_intertitre
+(h2,h3,h4,h5,h6) dans le cas de spip par defaut démarrant a h3 on signale par un h7 en rouge converti en `div.h7`
+
+Modif chaines de langue : on raccourci le label du bouton icone affiche lui le raccourci spip
+
 
 - 	1.1.0
 

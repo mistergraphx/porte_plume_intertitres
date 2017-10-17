@@ -19,3 +19,10 @@ if ( !isset ( $GLOBALS['debut_intertitre'] ) ) {
     $GLOBALS['fin_intertitre'] = '</h3>';
 }
 
+
+
+function get_heading_base_level(){
+    // Récupérer le niveau de base d'après la global
+    preg_match('/[h](\d)/s',$GLOBALS['debut_intertitre'], $matches) ;
+    return $matches[1];
+}
