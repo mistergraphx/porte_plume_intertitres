@@ -12,7 +12,12 @@
 if (!defined('_ECRIRE_INC_VERSION')) return;
 
 
-
+function porte_plume_intertitres_ieconfig_metas($table){
+	$table['porte_plume_intertitres']['titre'] = _T('porte_plume_intertitres:porte_plume_intertitres');
+	$table['porte_plume_intertitres']['icone'] = 'prive/themes/spip/images/porte_plume_intertitres-16.png';
+	$table['porte_plume_intertitres']['metas_serialize'] = 'porte_plume_intertitres';
+	return $table;
+}
 	
 // http://www.spip-contrib.net/Porte-Plume-documentation-technique
 function porte_plume_intertitres_porte_plume_barre_pre_charger($barres){

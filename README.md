@@ -77,7 +77,7 @@ Tout retour est apprécié : suggestions, tests, bugs, idées d'amélioration, p
 ## TODO
 
 - [X] 	ajouter la possibilitée de ne pas afficher les titres référence dans la barre d'outil sur globale ou config ?
-- [ ] 	ajout d'anchre avec url pour permettre d'inclure des liens facilement vers une partie du texte :  
+- [ ] 	ajout d'ancre avec url pour permettre d'inclure des liens facilement vers une partie du texte :  
 		https://assortment.io/posts/simple-automated-jumplinks-with-jquery  
 		ou anchor.js
 
@@ -86,7 +86,7 @@ Tout retour est apprécié : suggestions, tests, bugs, idées d'amélioration, p
 		    $GLOBALS['debut_intertitre'] = '<h3 class="spip">';
 			$GLOBALS['fin_intertitre'] = '</h3>';
 		```
-- [ ] 	Afficher l'icone correspondant au niveau de titre réelle en fonction de la globale debut_intertitre
+- [X] 	Afficher l'icone correspondant au niveau de titre réelle en fonction de la globale debut_intertitre
 	
 ## CHANGELOGS
 
