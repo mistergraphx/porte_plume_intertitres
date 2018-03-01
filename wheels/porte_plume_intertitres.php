@@ -29,12 +29,12 @@ function intertitres($t){
 	// Récupérer le niveau de base d'après la global
     preg_match('/[h](\d)/s',$GLOBALS['debut_intertitre'], $matches) ;
     $base_level = $matches[1];
-	
+
 	// quel type ? h ou r
 	// pour les class auto
 	$type = get_type($t[2]);
-	
-	// Ajouster le level de l'item
+
+	// Ajuster le level de l'item
 	// !! dans le cas du titre spip la regex ne retourne pas le mm nombre de résultats dans le array
 	// les titres spip n'ont pas #|*
 	if(strpos($t[2],'#') !== false || strpos($t[2],'*') !== false){
@@ -48,23 +48,23 @@ function intertitres($t){
 		// extenders
 		$attributs = classer_attributs($t[4]); // dans le cas des inter spip les extenders son en position 4
 	}
-	
+
 	$css = $type.$level;
-	
+
 	if(isset($attributs['css']))
 		$css .= $attributs['css'];
-	
+
 	(isset($attributs['id'])) ?	$id = 'id="'.$attributs['id'].'"' : $id='';
-	
+
 	if(isset($attributs['proprietes']))
 		$properties .= ' '.$attributs['proprietes'];
-		
+
 	// ne pas depasser h6
 	if($level < 7)
 		$html = "<h$level $id class=\"$css\"$properties>".$titre."</h$level>";
-    else
+  else
 		$html = "<div $id class=\"$css\"$properties>".$titre."</div>";
-		
+
 	return $html;
 }
 
@@ -75,7 +75,7 @@ function get_type($str){
 		$type = 'r';
 	else
 		$type = 'h';
-		
+
 	return $type;
 }
 
@@ -84,7 +84,7 @@ function classer_attributs($attributs){
 	$attributs = preg_split('/[\s]+/', $attributs);
 
 	$sorted = [];
-	
+
 	foreach($attributs as $attribut){
 		// css
 		if(is_css($attribut)){
@@ -96,11 +96,11 @@ function classer_attributs($attributs){
 			$id = is_id($attribut);
 			$sorted['id'] = $id[1];
 		}
-		// properties 
+		// properties
 		elseif(is_propertie($attribut)){
 			$propertie = is_propertie($attribut);
 			$sorted['proprietes'] .= $propertie[1];
-		}		
+		}
 	}
 
 	return $sorted;

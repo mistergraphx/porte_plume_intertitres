@@ -9,17 +9,17 @@
 >
 	<nom>Intertitres hierarchiques</nom>
 
-	<auteur>Mist. GraphX</auteur>
+	<auteur>Arnaud B. (Mist. GraphX)</auteur>
 
 	<licence>GNU/GPL</licence>
-	
+
 	<pipeline nom="ieconfig_metas" inclure="porte_plume_intertitres_pipelines.php" />
-	
+
 	<pipeline nom="pre_propre" inclure="porte_plume_intertitres_pipelines.php" />
 	<pipeline nom="porte_plume_barre_pre_charger" inclure="porte_plume_intertitres_pipelines.php" />
-    <pipeline nom="porte_plume_lien_classe_vers_icone" inclure="porte_plume_intertitres_pipelines.php" />
+  <pipeline nom="porte_plume_lien_classe_vers_icone" inclure="porte_plume_intertitres_pipelines.php" />
 
-	
+
 	<necessite nom="tw" compatibilite="[0.3.1;[" />
 
 </paquet>

@@ -18,26 +18,23 @@ function porte_plume_intertitres_ieconfig_metas($table){
 	$table['porte_plume_intertitres']['metas_serialize'] = 'porte_plume_intertitres';
 	return $table;
 }
-	
+
 // http://www.spip-contrib.net/Porte-Plume-documentation-technique
 function porte_plume_intertitres_porte_plume_barre_pre_charger($barres){
-	
+
 	$base_level = get_heading_base_level();
 	// Les références et titre on 5 niveau de hierarchie
 	// on pars du niveau de départ de la globale et on incrément
 	$max_level = 5;
-	
-	
-    $barre = &$barres['edition'];
-	
-	
-	
+
+	$barre = &$barres['edition'];
+
 	$barre->set('header1', array(
 		"dropMenu"    => array(
 			array(
 				"id"          => 'intertitre2',
 				"name"        => _T('porte_plume_intertitres:barre_intertitre2'),
-				"className"   => 'outil_intertitre'.($base_level+1), 
+				"className"   => 'outil_intertitre'.($base_level+1),
 				"openWith" => "\n{{{** ",
 				"closeWith" => "}}}\n",
 				"display"     => true,
@@ -46,7 +43,7 @@ function porte_plume_intertitres_porte_plume_barre_pre_charger($barres){
 			array(
 				"id"          => 'intertitre3',
 				"name"        => _T('porte_plume_intertitres:barre_intertitre3'),
-				"className"   => 'outil_intertitre'.($base_level+2), 
+				"className"   => 'outil_intertitre'.($base_level+2),
 				"openWith" => "\n{{{*** ",
 				"closeWith" => "}}}\n",
 				"display"     => true,
@@ -55,7 +52,7 @@ function porte_plume_intertitres_porte_plume_barre_pre_charger($barres){
 			array(
 				"id"          => 'intertitre4',
 				"name"        => _T('porte_plume_intertitres:barre_intertitre4'),
-				"className"   => 'outil_intertitre'.($base_level+3), 
+				"className"   => 'outil_intertitre'.($base_level+3),
 				"openWith" => "\n{{{**** ",
 				"closeWith" => "}}}\n",
 				"display"     => true,
@@ -64,33 +61,33 @@ function porte_plume_intertitres_porte_plume_barre_pre_charger($barres){
 			array(
 				"id"          => 'intertitre5',
 				"name"        => _T('porte_plume_intertitres:barre_intertitre5'),
-				"className"   => 'outil_intertitre'.($base_level+4), 
+				"className"   => 'outil_intertitre'.($base_level+4),
 				"openWith" => "\n{{{***** ",
 				"closeWith" => "}}}\n",
 				"display"     => true,
 				"selectionType" => "line",
-			)			
+			)
 		)
 	));
-	
+
 	$barre->ajouterApres('header1', array(
 					"id" => "sepgrp1",
 					"separator" => "---------------",
 					"display"   => true,
 		));
-	
+
 	include_spip('inc/config');
 	if (lire_config('porte_plume_intertitres/afficher_references', 0)) {
-		
+
 	$barre->ajouterApres('sepgrp1', array(
 			"id" => "ref",
 			"name"        => _T('barre_intertitre'),
-			"className"   => 'outil_ref', 
+			"className"   => 'outil_ref',
 			"dropMenu"    => array(
 			array(
 				"id"          => 'ref1',
 				"name"        => _T('barre_intertitre'),
-				"className"   => 'outil_ref1', 
+				"className"   => 'outil_ref1',
 				"openWith" => "\n{{{# ",
 				"closeWith" => "}}}\n",
 				"display"     => true,
@@ -99,7 +96,7 @@ function porte_plume_intertitres_porte_plume_barre_pre_charger($barres){
 			array(
 				"id"          => 'ref2',
 				"name"        => _T('porte_plume_intertitres:barre_intertitre2'),
-				"className"   => 'outil_ref2', 
+				"className"   => 'outil_ref2',
 				"openWith" => "\n{{{## ",
 				"closeWith" => "}}}\n",
 				"display"     => true,
@@ -108,7 +105,7 @@ function porte_plume_intertitres_porte_plume_barre_pre_charger($barres){
 			array(
 				"id"          => 'ref3',
 				"name"        => _T('porte_plume_intertitres:barre_intertitre3'),
-				"className"   => 'outil_ref3', 
+				"className"   => 'outil_ref3',
 				"openWith" => "\n{{{### ",
 				"closeWith" => "}}}\n",
 				"display"     => true,
@@ -117,16 +114,16 @@ function porte_plume_intertitres_porte_plume_barre_pre_charger($barres){
 			array(
 				"id"          => 'ref4',
 				"name"        => _T('porte_plume_intertitres:barre_intertitre4'),
-				"className"   => 'outil_ref4', 
+				"className"   => 'outil_ref4',
 				"openWith" => "\n{{{#### ",
 				"closeWith" => "}}}\n",
 				"display"     => true,
 				"selectionType" => "line",
 			)
 		)
-	
+
 	));
-	
+
 	$barre->ajouterApres('ref', array(
 					"id" => "sepgrp2",
 					"separator" => "---------------",
@@ -163,7 +160,7 @@ function porte_plume_intertitres_porte_plume_lien_classe_vers_icone($flux){
 // On numérotte et on prépare pour le traitement par textWheel
 // http://contrib.spip.net/Generation-automatique-de
 function porte_plume_intertitres_pre_propre($texte) {
-  
+
   // on cherche les noms de section commençant par des #
   // http://lumadis.be/regex/test_regex.php?id=2929
   /*
@@ -195,26 +192,26 @@ function porte_plume_intertitres_pre_propre($texte) {
 */
   // retourne le nombre de matches
   $count = preg_match_all("/({{{)(\#{1,5})(.*)(}}})/i", $texte, $matches);
-  
+
   //initialisation du compteur
   $cnt[0] = 0;
 
   //pour chaque titre trouvé
   for ($j=0; $j < $count; $j++) {
-	
+
 	$level = $matches[2][$j];
 	$titre = $matches[3][$j];
 
-	//on est au niveau de base {{{# }}}  
+	//on est au niveau de base {{{# }}}
 	if(strlen($level) == 1) {
-        
+
 		//on réinitialise le compteur de ce titre
 		for ($i=1; $i < count($cnt); $i++) {
-			$cnt[$i] = 0;		
-		} 
+			$cnt[$i] = 0;
+		}
         //on incrémente cnt[0]
 		$numeros = ++$cnt[0];
-		
+
 		$titre = $numeros.' - '.$titre;
 	} else {
         // on est à un niveau plus profond
@@ -227,10 +224,10 @@ function porte_plume_intertitres_pre_propre($texte) {
 		//on génère le titre
 		$titre = $numeros.' - '.$titre;
 	}
-		
+
 	$debut_markup = $matches[1][$j].$matches[2][$j];
 	$fin_markup =  $matches[4][$j];
-	
+
 	$haystack = $texte;
 	$needle = $matches[0][$j];
 	$replace = $debut_markup.$titre.$fin_markup ;
@@ -240,9 +237,8 @@ function porte_plume_intertitres_pre_propre($texte) {
 	if ($pos !== false) {
 		$texte = substr_replace($haystack, $replace, $pos, strlen($needle));
 	}
-	
+
   }
 
   return $texte;
 }
-
