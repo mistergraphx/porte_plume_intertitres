@@ -1,7 +1,7 @@
 <paquet
 	prefix="porte_plume_intertitres"
 	categorie="edition"
-	version="1.1.1"
+	version="1.1.2"
 	etat="dev"
 	compatibilite="[3.0.16;3.2.*]"
 	logo="prive/themes/spip/images/porte_plume_intertitres-32.png"
@@ -20,6 +20,6 @@
   <pipeline nom="porte_plume_lien_classe_vers_icone" inclure="porte_plume_intertitres_pipelines.php" />
 
 
-	<necessite nom="tw" compatibilite="[0.3.1;[" />
+	<necessite nom="tw" compatibilite="[0.8.23;[" />
 
 </paquet>
