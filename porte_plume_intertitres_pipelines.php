@@ -21,8 +21,10 @@ function porte_plume_intertitres_ieconfig_metas($table){
 
 // http://www.spip-contrib.net/Porte-Plume-documentation-technique
 function porte_plume_intertitres_porte_plume_barre_pre_charger($barres){
-
-	$base_level = get_heading_base_level();
+	static $base_level = false;
+	if(!$base_level){
+		$base_level = get_heading_base_level();
+	}
 	// Les références et titre on 5 niveau de hierarchie
 	// on pars du niveau de départ de la globale et on incrément
 	$max_level = 5;
