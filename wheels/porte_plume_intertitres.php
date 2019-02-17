@@ -8,8 +8,6 @@
  * @licence    GNU/GPL
  * @package    SPIP\Porte_plume_intertitres\wheels
  */
-
-
 if (!defined('_ECRIRE_INC_VERSION')) {
 	return;
 }
@@ -75,11 +73,7 @@ function intertitres($t){
 
 
 function get_type($str){
-	if(preg_match('/^#/',$str))
-		$type = 'r';
-	else
-		$type = 'h';
-
+	(preg_match('/^#/',$str)) ? $type = 'r' : $type = 'h' ;
 	return $type;
 }
 
