@@ -27,17 +27,18 @@ if (!defined('_ECRIRE_INC_VERSION')) {
 // 5 - attributs class|id
 function intertitres($t){
 	// Récupérer le niveau de base d'après la global
-    preg_match('/[h](\d)/s',$GLOBALS['debut_intertitre'], $matches) ;
-    $base_level = $matches[1];
+  preg_match('/[h](\d)/s',$GLOBALS['debut_intertitre'], $matches) ;
+  $base_level = $matches[1];
 
 	// quel type ? h ou r
 	// pour les class auto
 	$type = get_type($t[2]);
 
 	// Ajuster le level de l'item
-	// !! dans le cas du titre spip la regex ne retourne pas le mm nombre de résultats dans le array
+	// !! dans le cas du titre spip la regex ne retourne pas
+	// le mm nombre de résultats dans le array
 	// les titres spip n'ont pas #|*
-	if(strpos($t[2],'#') !== false || strpos($t[2],'*') !== false){
+	if(preg_match('/^[\*\#]/',$t[2])){
 		$level = (strlen($t[2]) - 1) + $base_level;
 		$titre = $t[3];
 		// extenders
@@ -71,7 +72,7 @@ function intertitres($t){
 
 
 function get_type($str){
-	if(strpos('#',$str) !== false)
+	if(preg_match('/^#/',$str))
 		$type = 'r';
 	else
 		$type = 'h';

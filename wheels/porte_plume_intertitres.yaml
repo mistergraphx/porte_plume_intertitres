@@ -10,7 +10,7 @@ intertitre5:
   replace: intertitres
   if_str: '{{{*****'
   priority: -40
-  
+
 intertitre4:
   # raccourcis en {{{..}}}
   # intertitres
@@ -19,7 +19,7 @@ intertitre4:
   replace: intertitres
   if_str: '{{{****'
   priority: -40
-  
+
 intertitre3:
   # raccourcis en {{{..}}}
   # intertitres
@@ -28,7 +28,7 @@ intertitre3:
   replace: intertitres
   if_str: '{{{***'
   priority: -40
-  
+
 intertitre2:
   # raccourcis en {{{..}}}
   # intertitres
@@ -46,7 +46,7 @@ intertitre1:
   replace: intertitres
   if_str: '{{{*'
   priority: -40
-  
+
 reference5:
   match: "/({{{)(#####)(.*?)(}}})(?:{(.*?)})?/s"
   is_callback: Y
@@ -85,8 +85,8 @@ reference1:
 intertitres:
   # raccourcis en {{{..}}}
   # intertitres
-  match: "/({{{(?!\*|#))(.*?)(}}})(?:{(.*?)})?/s"
+  match: "/({{{)(?!\*|#)(.*?)(}}})(?:{(.*?)})?/s"
   is_callback: Y
   replace: intertitres
   if_str: '{{{'
-  priority: -30
+  priority: -50

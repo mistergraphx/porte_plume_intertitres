@@ -1,6 +1,6 @@
 # Intertitres pour le porte plume
 
-Nativement spip ne propose qu'un seul niveau de titre/intertitre. 
+Nativement spip ne propose qu'un seul niveau de titre/intertitre.
 Le niveau de départ `h3.spip` est configurable depuis `_options.php`,
 en utilisant les [variables de personalisations](http://www.spip.net/fr_article1825.html#debut_intertitre) :
 
@@ -15,8 +15,8 @@ $GLOBALS['fin_intertitre'] = "</h3>\n";
 
 ```
 
-Le plugin reprend les syntaxes proposées par typo-enluminée, et intertitres_tdm, 
-les syntaxes `{{{***` pour les titres simples ou `{{{###` pour les titres de type référence (ex:1.1, 1.1.2).
+Le plugin reprend les syntaxes proposées par typo-enluminée, et intertitres_tdm,
+soit `{{{***` pour les titres simples ou `{{{###` pour les titres de type référence (ex:1.1, 1.1.2).
 
 Les icones affichées dans le porte plume (barre typographique),
 reflète le niveau sémantique au sens html pour sensibiliser le rédacteur à son plan de page.
@@ -87,7 +87,7 @@ Tout retour est apprécié : suggestions, tests, bugs, idées d'amélioration, p
 			$GLOBALS['fin_intertitre'] = '</h3>';
 		```
 - [X] 	Afficher l'icone correspondant au niveau de titre réelle en fonction de la globale debut_intertitre
-	
+
 ## CHANGELOGS
 
 
@@ -129,15 +129,14 @@ Modif chaines de langue : on raccourci le label du bouton icone affiche lui le r
 
 -   1.0.4 :
     - [x] limiter le niveau et passer sur un div a h6
-    
+
 -   1.0.3 :
     - Report de la gestion du niveau sur les références
 
 -   1.0.2 :
     - suppression du fichier fonction inutile pour le moment et des markers de fin de php `?>`
-        
+
 -   1.0.1 :
     ajout d'une fonction de callback sur les wheels des intertitres, gérant
     l'incrémentation du niveau de titre d'après la $GLOBALS['debut_intertitre']
     définissable dans mes_options.php.
-    
