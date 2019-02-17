@@ -21,14 +21,17 @@ if (!defined('_ECRIRE_INC_VERSION')) {
 // Le contenu du tableau est le suivant :
 // 0 - la chaine complète
 // 1 - le groupe ouvrant
-// 2 - le type|level
+// 2 - le type|level - ou string/contenu si intertitre spip
 // 3 - le contenu
 // 4 - le groupe fermant
 // 5 - attributs class|id
 function intertitres($t){
-	// Récupérer le niveau de base d'après la global
-  preg_match('/[h](\d)/s',$GLOBALS['debut_intertitre'], $matches) ;
-  $base_level = $matches[1];
+	static $base_level = false;
+	if(!$base_level){
+		// Récupérer le niveau de base d'après la global
+	  preg_match('/[h](\d)/s',$GLOBALS['debut_intertitre'], $matches) ;
+	  $base_level = $matches[1];
+	}
 
 	// quel type ? h ou r
 	// pour les class auto
