@@ -1,11 +1,11 @@
 <paquet
 	prefix="porte_plume_intertitres"
 	categorie="edition"
-	version="1.1.2"
+	version="1.1.3"
 	etat="dev"
 	compatibilite="[3.0.16;3.2.*]"
 	logo="prive/themes/spip/images/porte_plume_intertitres-32.png"
-	documentation="https://github.com/mistergraphx/porte_plume_intertitres"
+	documentation="https://contrib.spip.net/5102"
 >
 	<nom>Intertitres hierarchiques</nom>
 
